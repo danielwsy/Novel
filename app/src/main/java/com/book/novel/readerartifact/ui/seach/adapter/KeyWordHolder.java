@@ -3,6 +3,7 @@ package com.book.novel.readerartifact.ui.seach.adapter;
 import android.widget.TextView;
 
 import com.book.novel.readerartifact.R;
+import com.book.novel.readerartifact.base.adapter.ViewHolderImpl;
 
 /**
  * @author daniel-wang.

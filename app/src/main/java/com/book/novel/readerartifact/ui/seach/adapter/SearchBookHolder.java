@@ -4,6 +4,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.book.novel.readerartifact.R;
+import com.book.novel.readerartifact.base.adapter.ViewHolderImpl;
 import com.book.novel.readerartifact.network.UrlConfig;
 import com.bumptech.glide.Glide;
 import com.book.novel.readerartifact.ui.seach.entity.SearchBookPackage;

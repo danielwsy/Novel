@@ -8,9 +8,20 @@
     <color name="red">#FF0000</color>
     <color name="gray">#b8b8b8</color>
     <color name="black">#000000</color>
+    <color name="orange">#DE6014</color>
+    <color name="light_white">#EEEEEE</color>
+    <color name="light_coffee">#A58D5E</color>
 
+    <!--通用分割线细-->
+    <color name="nb.divider.narrow">#E3E3E3</color>
+    <!--通用分割线粗-->
+    <color name="nb.divider.wide">@color/light_white</color>
+
+    <color name="nb.text.default">@color/black</color>
     <!--通用二级标题的颜色-->
     <color name="nb.text.common_h2">#727272</color>
+    <!--通用三级标题的颜色-->
+    <color name="nb.text.common_h3">#B2B2B2</color>
 
     <color name="nb.widget.button.normal">@color/white</color>
     <color name="nb.widget.button.selected">#E3E3E3</color>

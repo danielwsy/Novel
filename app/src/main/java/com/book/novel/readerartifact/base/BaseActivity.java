@@ -39,6 +39,11 @@ public abstract class BaseActivity<M extends IModel, V extends IView, P extends 
         setContentView(mRootView);
         initView(mRootView, savedInstanceState);
         initData();
+        processLoading();
+    }
+
+    protected void processLoading() {
+
     }
 
     @Override

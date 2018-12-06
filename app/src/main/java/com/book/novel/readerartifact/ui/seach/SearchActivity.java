@@ -211,7 +211,7 @@ public class SearchActivity extends BaseActivity<ISearchModel, ISearchView, Sear
         mSearchAdapter.setOnItemClickListener(
                 (view, pos) -> {
                     String bookId = mSearchAdapter.getItem(pos).get_id();
-                  BookDetailActivity.startActivity(this,bookId);
+                    BookDetailActivity.startActivity(this, bookId);
                 }
         );
 

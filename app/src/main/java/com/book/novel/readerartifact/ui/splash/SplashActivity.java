@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.book.novel.readerartifact.MainActivity;
+
 import com.book.novel.readerartifact.R;
 import com.book.novel.readerartifact.R2;
 import com.book.novel.readerartifact.base.BaseActivity;
@@ -15,9 +16,7 @@ import com.book.novel.readerartifact.base.IPresenter;
 import com.book.novel.readerartifact.base.IView;
 import com.book.novel.readerartifact.network.UrlConfig;
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-import com.bumptech.glide.request.RequestOptions;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -67,10 +66,6 @@ public class SplashActivity extends BaseActivity {
     @Override
     public void initView(View view, Bundle savedInstanceState) {
         Glide.with(this).load(UrlConfig.SPLASH_URL)
-                .apply(new RequestOptions()
-                        .centerCrop()
-                        .diskCacheStrategy(DiskCacheStrategy.ALL))
-                .transition(new DrawableTransitionOptions().crossFade(800))
                 .into(mSplashView);
     }
 

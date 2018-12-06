@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.seach.adapter;
+package com.book.novel.readerartifact.base.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

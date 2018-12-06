@@ -2,4 +2,14 @@
     <string name="app_name">ReaderArtifact</string>
 
     <string name="nb.search.book.brief">%1$d人在追 | %2$s读者留存 | %3$s著</string>
+    <string name="nb.book_detail.chase_update">追更</string>
+    <string name="nb.book_detail.start_read">开始阅读</string>
+    <!--book_detail : -->
+    <string name="nb.book_detail.hot_comment">热门书评</string>
+    <string name="nb.book_detail.community">%1$s的社区</string>
+    <string name="nb.book_detail.posts_count">共有%1$d个帖子</string>
+    <string name="nb.book_detail.recommend_book_list">推荐书单</string>
+    <string name="nb.user.lv">&#160;lv.%1$d</string>
+    <string name="nb.book.word">|&#160;%1$d&#160;万字</string>
+    <string name="nb.fragment.book_list.message">共%1$d本书 |&#160; %2$d人收藏</string>
 </resources>
