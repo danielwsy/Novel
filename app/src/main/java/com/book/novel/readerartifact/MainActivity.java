@@ -1,20 +1,26 @@
 package com.book.novel.readerartifact;
 
+import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.book.novel.readerartifact.base.BaseActivity;
 import com.book.novel.readerartifact.base.IModel;
 import com.book.novel.readerartifact.base.IPresenter;
 import com.book.novel.readerartifact.base.IView;
 import com.book.novel.readerartifact.base.SupportFragment;
-import com.book.novel.readerartifact.bookshelf.BookShelfFragment;
+import com.book.novel.readerartifact.ui.bookshelf.BookShelfFragment;
+import com.book.novel.readerartifact.ui.seach.SearchActivity;
+import com.book.novel.readerartifact.ui.setting.SettingActivity;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
@@ -29,6 +35,24 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.find_book)
     RadioButton mRbFindBook;
+
+    @BindView(R.id.iv_search)
+    ImageView mIvSearch;
+
+    @BindView(R.id.tv_setting)
+    TextView mTvSetting;
+
+    @OnClick(R.id.iv_search)
+    public void onSearchClicked() {
+        startActivity(new Intent(this, SearchActivity.class));
+    }
+
+
+    @OnClick(R.id.tv_setting)
+    public void onSettingCliked() {
+        startActivity(new Intent(this, SettingActivity.class));
+    }
+
 
     private SupportFragment[] mFragments = new SupportFragment[2];
 

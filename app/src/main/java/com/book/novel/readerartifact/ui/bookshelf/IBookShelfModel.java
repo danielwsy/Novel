@@ -1,12 +1,11 @@
-package com.book.novel.readerartifact.bookshelf;
+package com.book.novel.readerartifact.ui.bookshelf;
 
 import com.book.novel.readerartifact.base.IModel;
-import com.book.novel.readerartifact.bookshelf.entity.CollBookBean;
-import com.book.novel.readerartifact.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
 
 import java.util.List;
 
-import io.reactivex.Observable;
 import io.reactivex.Single;
 
 /**

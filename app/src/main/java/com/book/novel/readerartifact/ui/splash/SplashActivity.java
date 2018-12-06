@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.Splash;
+package com.book.novel.readerartifact.ui.splash;
 
 import android.content.Intent;
 import android.os.Bundle;

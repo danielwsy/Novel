@@ -1,14 +1,13 @@
-package com.book.novel.readerartifact.bookshelf;
+package com.book.novel.readerartifact.ui.bookshelf;
 
-import com.book.novel.readerartifact.bookshelf.entity.CollBookBean;
-import com.book.novel.readerartifact.bookshelf.entity.DownloadTaskBean;
-import com.book.novel.readerartifact.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.DownloadTaskBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
 import com.book.novel.readerartifact.network.BaseHttpUtils;
 import com.book.novel.readerartifact.network.UrlConfig;
 
 import java.util.List;
 
-import io.reactivex.Observable;
 import io.reactivex.Single;
 import retrofit2.Retrofit;
 

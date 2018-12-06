@@ -1,7 +1,7 @@
-package com.book.novel.readerartifact.bookshelf;
+package com.book.novel.readerartifact.ui.bookshelf;
 
 import com.book.novel.readerartifact.base.IView;
-import com.book.novel.readerartifact.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
 
 import java.util.List;
 

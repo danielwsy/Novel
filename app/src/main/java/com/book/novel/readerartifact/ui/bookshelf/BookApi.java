@@ -1,8 +1,8 @@
-package com.book.novel.readerartifact.bookshelf;
+package com.book.novel.readerartifact.ui.bookshelf;
 
-import com.book.novel.readerartifact.bookshelf.entity.BookChapterPackage;
-import com.book.novel.readerartifact.bookshelf.entity.ChapterInfoPackage;
-import com.book.novel.readerartifact.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.BookChapterPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.ChapterInfoPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;

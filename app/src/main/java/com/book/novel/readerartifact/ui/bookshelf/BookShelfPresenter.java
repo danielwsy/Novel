@@ -1,20 +1,19 @@
-package com.book.novel.readerartifact.bookshelf;
+package com.book.novel.readerartifact.ui.bookshelf;
 
 import com.book.novel.readerartifact.base.BasePresenter;
-import com.book.novel.readerartifact.bookshelf.entity.CollBookBean;
-import com.book.novel.readerartifact.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
 import com.book.novel.readerartifact.util.RxUtils;
 
 import java.util.List;
 
-import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 /**
  * @author daniel-wang.
- * @describe :
+ * @describe : 书架
  * @date :2018/12/5
  */
 

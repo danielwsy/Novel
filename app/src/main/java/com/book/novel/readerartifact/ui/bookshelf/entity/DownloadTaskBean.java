@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.bookshelf.entity;
+package com.book.novel.readerartifact.ui.bookshelf.entity;
 
 /**
  * @author daniel-wang.

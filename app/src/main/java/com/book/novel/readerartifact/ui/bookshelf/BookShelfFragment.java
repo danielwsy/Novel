@@ -1,10 +1,10 @@
-package com.book.novel.readerartifact.bookshelf;
+package com.book.novel.readerartifact.ui.bookshelf;
 
 import android.os.Bundle;
 
 import com.book.novel.readerartifact.R;
 import com.book.novel.readerartifact.base.BaseFragment;
-import com.book.novel.readerartifact.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
 
 import java.util.List;
 
