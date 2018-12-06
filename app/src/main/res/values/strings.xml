@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ReaderArtifact</string>
+
+    <string name="nb.search.book.brief">%1$d人在追 | %2$s读者留存 | %3$s著</string>
 </resources>

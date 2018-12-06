@@ -1,8 +1,11 @@
-package com.book.novel.readerartifact.ui.bookshelf;
+package com.book.novel.readerartifact.util;
 
 import com.book.novel.readerartifact.ui.bookshelf.entity.BookChapterPackage;
 import com.book.novel.readerartifact.ui.bookshelf.entity.ChapterInfoPackage;
 import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.seach.entity.HotWordPackage;
+import com.book.novel.readerartifact.ui.seach.entity.KeyWordPackage;
+import com.book.novel.readerartifact.ui.seach.entity.SearchBookPackage;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
@@ -27,7 +30,6 @@ public interface BookApi {
     Single<RecommendBookPackage> getRecommendBookPackage(@Query("gender") String gender);
 
 
-
     /**
      * 获取书籍的章节总列表
      *
@@ -47,4 +49,6 @@ public interface BookApi {
      */
     @GET("http://chapter2.zhuishushenqi.com/chapter/{url}")
     Single<ChapterInfoPackage> getChapterInfoPackage(@Path("url") String url);
+
+
 }

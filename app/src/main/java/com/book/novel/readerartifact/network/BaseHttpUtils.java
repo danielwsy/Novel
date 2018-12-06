@@ -33,6 +33,11 @@ public class BaseHttpUtils {
     private Context mContext;
     private Retrofit mRetrofit;
 
+    public BaseHttpUtils() {
+        mContext = HiApplication.getContext();
+        mServerUrl = UrlConfig.API_BASE_URL;
+    }
+
     public BaseHttpUtils(String serverUrl) {
         mContext = HiApplication.getContext();
         mServerUrl = serverUrl;

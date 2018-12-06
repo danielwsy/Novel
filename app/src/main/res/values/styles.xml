@@ -16,4 +16,19 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+    <!--Common-->
+
+    <!-- TextAppearance:修改 -->
+    <!--Common-->
+    <style name="NB.Theme" parent="AppTheme" />
+
+    <style name="NB.Theme.TextAppearance" />
+
+    <style name="NB.Theme.TextAppearance.Common" />
+
+    <style name="NB.Theme.TextAppearance.Common.SingleLine">
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
 </resources>

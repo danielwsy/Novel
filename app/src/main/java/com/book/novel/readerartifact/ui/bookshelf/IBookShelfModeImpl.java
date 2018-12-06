@@ -2,9 +2,10 @@ package com.book.novel.readerartifact.ui.bookshelf;
 
 import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
 import com.book.novel.readerartifact.ui.bookshelf.entity.DownloadTaskBean;
-import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
 import com.book.novel.readerartifact.network.BaseHttpUtils;
 import com.book.novel.readerartifact.network.UrlConfig;
+import com.book.novel.readerartifact.util.BookApi;
+import com.book.novel.readerartifact.util.BookRepository;
 
 import java.util.List;
 
@@ -21,8 +22,7 @@ public class IBookShelfModeImpl implements IBookShelfModel {
 
     @Override
     public List<CollBookBean> refreshCollBooks() {
-        List<CollBookBean> collBooks = BookRepository
-                .getInstance().getCollBooks();
+        List<CollBookBean> collBooks = BookRepository.getInstance().getCollBooks();
         return collBooks;
     }
 

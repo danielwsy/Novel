@@ -1,4 +1,7 @@
-package com.book.novel.readerartifact.ui.setting;
+package com.book.novel.readerartifact.ui.bookdetail;
+
+import android.content.Context;
+import android.content.Intent;
 
 import com.book.novel.readerartifact.R;
 import com.book.novel.readerartifact.base.BaseActivity;
@@ -8,11 +11,19 @@ import com.book.novel.readerartifact.base.IView;
 
 /**
  * @author daniel-wang.
- * @describe : 设置页面
+ * @describe :
  * @date :2018/12/6
  */
 
-public class SettingActivity extends BaseActivity {
+public class BookDetailActivity extends BaseActivity {
+
+    private static final String BOOK_ID = "book_id";
+    public static void startActivity(Context context, String bookId) {
+        Intent intent = new Intent(context, BookDetailActivity.class);
+        intent.putExtra(BOOK_ID, bookId);
+        context.startActivity(intent);
+    }
+
     @Override
     public IModel createModel() {
         return null;
@@ -30,6 +41,6 @@ public class SettingActivity extends BaseActivity {
 
     @Override
     public int getContentView() {
-        return R.layout.activity_setting;
+        return R.layout.activity_book_detail;
     }
 }

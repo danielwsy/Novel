@@ -52,5 +52,9 @@ dependencies {
     //闪屏页
     compile rootProject.ext.dependencies["gif-drawable"]
     compile rootProject.ext.dependencies["glide"]
+    //Search页面
+    compile rootProject.ext.dependencies["taggroup"]
+    compile rootProject.ext.dependencies["recyclerview"]
+
 
 }

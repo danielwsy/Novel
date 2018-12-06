@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/search_toolbar" />
 
-</RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!--搜索显示界面-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="热门搜索"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/search_book_tv_refresh_hot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawableLeft="@drawable/ic_refresh"
+                    android:drawablePadding="2dp"
+                    android:gravity="center_vertical"
+                    android:text="换一批" />
+            </RelativeLayout>
+
+            <!--占个位置-->
+            <me.gujun.android.taggroup.TagGroup
+                android:id="@+id/search_tg_hot"
+                style="@style/TagGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:atg_borderColor="@color/gray"
+                app:atg_horizontalSpacing="8dp"
+                app:atg_isAppendMode="false"
+                app:atg_textColor="@color/black"
+                app:atg_verticalPadding="8dp"
+                app:atg_verticalSpacing="15dp">
+            </me.gujun.android.taggroup.TagGroup>
+        </LinearLayout>
+
+        <!--关键字，书籍显示-->
+        <include layout="@layout/fragment_refresh_list" />
+    </FrameLayout>
+
+</LinearLayout>

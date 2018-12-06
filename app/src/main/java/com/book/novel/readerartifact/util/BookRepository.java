@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.bookshelf;
+package com.book.novel.readerartifact.util;
 
 import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
 
@@ -30,7 +30,7 @@ public class BookRepository {
 
 
     /**
-     * 从数据库中读取书架中的shuji
+     * 从数据库中读取书架中的书籍
      *
      * @return
      */
