@@ -1,13 +1,14 @@
 package com.book.novel.readerartifact.util;
 
-import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.base.gen.CollectBookBeanDao;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
 
 import java.util.List;
 
 /**
  * @author daniel-wang.
  * @describe : 存储关于书籍内容的信息
- * CollBook : 收藏书籍
+ * CollectBook : 收藏书籍
  * BookChapter :书籍列表
  * ChapterInfo :书籍章节
  * BookRecord : 记录
@@ -16,6 +17,10 @@ import java.util.List;
 
 public class BookRepository {
     private static volatile BookRepository sInstance;
+    private CollectBookBeanDao mCollectBookDao;
+
+    public BookRepository() {
+    }
 
     public static BookRepository getInstance() {
         if (sInstance == null) {
@@ -34,7 +39,7 @@ public class BookRepository {
      *
      * @return
      */
-    public List<CollBookBean> getCollBooks() {
+    public List<CollectBookBean> getCollBooks() {
         return null;
     }
 }

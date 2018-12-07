@@ -35,6 +35,9 @@
         <activity
             android:name=".ui.bookdetail.BookDetailActivity"
             android:theme="@style/AppTheme.NoBar" />
+        <activity
+            android:name=".ui.readbook.ReadingActivity"
+            android:theme="@style/AppTheme.NoBar" />
 
     </application>
 

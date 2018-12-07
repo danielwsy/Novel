@@ -21,12 +21,15 @@ import com.book.novel.readerartifact.ui.bookdetail.adapter.HotCommentAdapter;
 import com.book.novel.readerartifact.ui.bookdetail.entity.BookDetailBean;
 import com.book.novel.readerartifact.ui.bookdetail.entity.HotCommentPackage;
 import com.book.novel.readerartifact.ui.bookdetail.entity.RecommendBookListPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
+import com.book.novel.readerartifact.ui.readbook.ReadingActivity;
 import com.book.novel.readerartifact.ui.seach.adapter.DividerItemDecoration;
 import com.book.novel.readerartifact.util.StringUtils;
 import com.book.novel.readerartifact.widget.RefreshLayout;
 import com.bumptech.glide.Glide;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * @author daniel-wang.
@@ -83,6 +86,16 @@ public class BookDetailActivity extends BaseActivity<IBookDetailModel, IBookDeta
     private BookListAdapter mBookListAdapter;
     private String mBookId;
 
+    private CollectBookBean mCollBookBean;
+    public static final String EXTRA_COLL_BOOK = "extra_coll_book";
+
+    @OnClick(R.id.book_detail_tv_read)
+    public void startReadBook() {
+        Intent intent = new Intent(this, ReadingActivity.class);
+        intent.putExtra("EXTRA_COLL_BOOK", mCollBookBean);
+        startActivity(intent);
+    }
+
     @Override
     public IBookDetailModel createModel() {
         return new IBookDetailModelImpl();
@@ -117,7 +130,7 @@ public class BookDetailActivity extends BaseActivity<IBookDetailModel, IBookDeta
     @Override
     protected void processLoading() {
         super.processLoading();
-        if(presenter!= null){
+        if (presenter != null) {
             presenter.refreshBookDetail(mBookId);
         }
     }
@@ -154,8 +167,7 @@ public class BookDetailActivity extends BaseActivity<IBookDetailModel, IBookDeta
         mTvCommunity.setText(getResources().getString(R.string.nb_book_detail_community, bean.getTitle()));
         //帖子数
         mTvPostsCount.setText(getResources().getString(R.string.nb_book_detail_posts_count, bean.getPostCount()));
-//        mCollBookBean = BookRepository.getInstance().getCollBook(bean.get_id());
-
+        mCollBookBean = bean.getCollBookBean();
     }
 
     @Override

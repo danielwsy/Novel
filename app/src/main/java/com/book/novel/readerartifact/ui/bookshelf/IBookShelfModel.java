@@ -1,8 +1,7 @@
 package com.book.novel.readerartifact.ui.bookshelf;
 
 import com.book.novel.readerartifact.base.IModel;
-import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
-import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
 
 import java.util.List;
 
@@ -15,12 +14,12 @@ import io.reactivex.Single;
  */
 
 public interface IBookShelfModel extends IModel {
-    List<CollBookBean> refreshCollBooks();
+    List<CollectBookBean> refreshCollBooks();
 
-    void createDownloadTask(CollBookBean collBookBean);
+    void createDownloadTask(CollectBookBean collectBookBean);
 
-    void updateCollBooks(List<CollBookBean> collBookBeans);
+    void updateCollBooks(List<CollectBookBean> collectBookBeans);
 
-    Single<List<CollBookBean>> loadRecommendBooks(String gender);
+    Single<List<CollectBookBean>> loadRecommendBooks(String gender);
 
 }

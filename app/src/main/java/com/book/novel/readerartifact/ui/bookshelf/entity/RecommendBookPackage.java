@@ -10,13 +10,13 @@ import java.util.List;
 
 public class RecommendBookPackage {
 
-    private List<CollBookBean> books;
+    private List<CollectBookBean> books;
 
-    public List<CollBookBean> getBooks() {
+    public List<CollectBookBean> getBooks() {
         return books;
     }
 
-    public void setBooks(List<CollBookBean> books) {
+    public void setBooks(List<CollectBookBean> books) {
         this.books = books;
     }
 }

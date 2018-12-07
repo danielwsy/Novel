@@ -1,8 +1,7 @@
 package com.book.novel.readerartifact.ui.bookshelf;
 
 import com.book.novel.readerartifact.base.BasePresenter;
-import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
-import com.book.novel.readerartifact.ui.bookshelf.entity.RecommendBookPackage;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
 import com.book.novel.readerartifact.util.RxUtils;
 
 import java.util.List;
@@ -20,22 +19,22 @@ import io.reactivex.functions.Consumer;
 public class BookShelfPresenter extends BasePresenter<IBookShelfModel, IBookShelfView> {
 
     public void refreshCollBooks() {
-        List<CollBookBean> collBookBeans = mModel.refreshCollBooks();
-        getView().finishRefresh(collBookBeans);
+        List<CollectBookBean> collectBookBeans = mModel.refreshCollBooks();
+        getView().finishRefresh(collectBookBeans);
     }
 
     public void loadRecommendBooks(String gender) {
-        Single<List<CollBookBean>> bookPackage = mModel.loadRecommendBooks(gender);
-        Disposable disposable = bookPackage.doOnSuccess(new Consumer<List<CollBookBean>>() {
+        Single<List<CollectBookBean>> bookPackage = mModel.loadRecommendBooks(gender);
+        Disposable disposable = bookPackage.doOnSuccess(new Consumer<List<CollectBookBean>>() {
 
             @Override
-            public void accept(List<CollBookBean> collBookBeans) throws Exception {
+            public void accept(List<CollectBookBean> collBookBeans) throws Exception {
 
             }
         }).compose(RxUtils::toSimpleSingle)
                 .subscribe(
                         beans -> {
-                            getView().finishRefresh((List<CollBookBean>) beans);
+                            getView().finishRefresh((List<CollectBookBean>) beans);
                             getView().complete();
                         },
                         (e) -> {

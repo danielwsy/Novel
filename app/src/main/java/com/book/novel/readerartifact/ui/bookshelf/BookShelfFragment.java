@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.book.novel.readerartifact.R;
 import com.book.novel.readerartifact.base.BaseFragment;
-import com.book.novel.readerartifact.ui.bookshelf.entity.CollBookBean;
+import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
 
 import java.util.List;
 
@@ -45,7 +45,7 @@ public class BookShelfFragment extends BaseFragment<IBookShelfModel, IBookShelfV
     }
 
     @Override
-    public void finishRefresh(List<CollBookBean> collBookBeans) {
+    public void finishRefresh(List<CollectBookBean> collectBookBeans) {
 
     }
 
