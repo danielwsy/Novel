@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.RectF;
+import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
@@ -71,8 +72,17 @@ public class PageView extends View {
     //内容加载器
     private PageLoader mPageLoader;
 
+
     public PageView(Context context) {
-        super(context);
+        this(context, null);
+    }
+
+    public PageView(Context context, AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
+
+    public PageView(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -192,7 +202,9 @@ public class PageView extends View {
         canvas.drawColor(mBgColor);
 
         //绘制动画
-        mPageAnim.draw(canvas);
+        if(mPageAnim!= null){
+            mPageAnim.draw(canvas);
+        }
     }
 
     @Override
@@ -208,8 +220,12 @@ public class PageView extends View {
                 mStartX = x;
                 mStartY = y;
                 isMove = false;
-                canTouch = mTouchListener.onTouch();
-                mPageAnim.onTouchEvent(event);
+                if (mTouchListener != null){
+                    canTouch = mTouchListener.onTouch();
+                }
+                if (mPageAnim != null){
+                    mPageAnim.onTouchEvent(event);
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
                 // 判断是否大于最小滑动值。
@@ -273,7 +289,9 @@ public class PageView extends View {
     @Override
     public void computeScroll() {
         //进行滑动
-        mPageAnim.scrollAnim();
+        if(mPageAnim!= null){
+            mPageAnim.scrollAnim();
+        }
         super.computeScroll();
     }
 
