@@ -1,5 +1,6 @@
 package com.book.novel.readerartifact.ui.readbook;
 
+
 import com.book.novel.readerartifact.R;
 import com.book.novel.readerartifact.base.BaseActivity;
 import com.book.novel.readerartifact.base.IModel;

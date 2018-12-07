@@ -227,6 +227,10 @@ public class CollectBookBean implements Parcelable {
         return this.isLocal;
     }
 
+    public boolean isLocal() {
+        return isLocal;
+    }
+
     public void setIsLocal(boolean isLocal) {
         this.isLocal = isLocal;
     }

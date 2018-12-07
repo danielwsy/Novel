@@ -12,4 +12,15 @@
     <string name="nb.user.lv">&#160;lv.%1$d</string>
     <string name="nb.book.word">|&#160;%1$d&#160;万字</string>
     <string name="nb.fragment.book_list.message">共%1$d本书 |&#160; %2$d人收藏</string>
+
+    <!--read-->
+    <string name="nb.read.community">社区</string>
+    <string name="nb.read.brief">简介</string>
+    <string name="nb.read.setting">设置</string>
+    <string name="nb.read.download">缓存</string>'
+    <string name="nb.read.category">目录</string>
+    <string name="nb.read.no_chapter">第 %1$d 章(%2$d)</string>
+
+    <string name="nb.mode.night">夜间</string>
+    <string name="nb.mode.morning">日间</string>
 </resources>
