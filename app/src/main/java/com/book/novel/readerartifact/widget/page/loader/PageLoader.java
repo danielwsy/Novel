@@ -13,12 +13,12 @@ import android.text.TextPaint;
 
 import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
 import com.book.novel.readerartifact.ui.readbook.BookRecordBean;
-import com.book.novel.readerartifact.util.BookRepository;
 import com.book.novel.readerartifact.util.CommonString;
 import com.book.novel.readerartifact.util.IOUtils;
 import com.book.novel.readerartifact.util.RxUtils;
 import com.book.novel.readerartifact.util.ScreenUtils;
 import com.book.novel.readerartifact.util.StringUtils;
+import com.book.novel.readerartifact.util.db.BookRepository;
 import com.book.novel.readerartifact.widget.page.PageMode;
 import com.book.novel.readerartifact.widget.page.PageStyle;
 import com.book.novel.readerartifact.widget.page.PageView;
@@ -29,7 +29,6 @@ import com.book.novel.readerartifact.widget.page.TxtPage;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.net.CookieHandler;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -567,18 +566,16 @@ public abstract class PageLoader {
         }
 
         //存储到数据库
-        //TODO
-//        BookRepository.getInstance()
-//                .saveBookRecord(mBookRecord);
+        BookRepository.getInstance()
+                .saveBookRecord(mBookRecord);
     }
 
     /**
      * 初始化书籍
      */
     private void prepareBook() {
-        //TODO
-//        mBookRecord = BookRepository.getInstance()
-//                .getBookRecord(mCollBook.get_id());
+        mBookRecord = BookRepository.getInstance()
+                .getBookRecord(mCollBook.get_id());
 
         if (mBookRecord == null) {
             mBookRecord = new BookRecordBean();

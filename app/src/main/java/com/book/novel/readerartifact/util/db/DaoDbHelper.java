@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.util;
+package com.book.novel.readerartifact.util.db;
 
 import android.database.sqlite.SQLiteDatabase;
 
@@ -6,10 +6,9 @@ import com.book.novel.readerartifact.HiApplication;
 import com.book.novel.readerartifact.base.gen.DaoMaster;
 import com.book.novel.readerartifact.base.gen.DaoSession;
 
+
 /**
- * @author daniel-wang.
- * @describe :
- * @date :2018/12/7
+ * Created by newbiechen on 17-4-26.
  */
 
 public class DaoDbHelper {
@@ -20,16 +19,38 @@ public class DaoDbHelper {
     private DaoMaster mDaoMaster;
     private DaoSession mSession;
 
-    public DaoDbHelper() {
+    private DaoDbHelper(){
         //封装数据库的创建、更新、删除
-        DaoMaster.DevOpenHelper openHelper = new DaoMaster.DevOpenHelper(HiApplication.getContext(), DB_NAME, null);
+        DaoMaster.DevOpenHelper openHelper = new MyOpenHelper(HiApplication.getContext(),DB_NAME,null);
         //获取数据库
         mDb = openHelper.getWritableDatabase();
         //封装数据库中表的创建、更新、删除
         mDaoMaster = new DaoMaster(mDb);  //合起来就是对数据库的操作
         //对表操作的对象。
         mSession = mDaoMaster.newSession(); //可以认为是对数据的操作
-
     }
 
+
+    public static DaoDbHelper getInstance(){
+        if (sInstance == null){
+            synchronized (DaoDbHelper.class){
+                if (sInstance == null){
+                    sInstance = new DaoDbHelper();
+                }
+            }
+        }
+        return sInstance;
+    }
+
+    public DaoSession getSession(){
+        return mSession;
+    }
+
+    public SQLiteDatabase getDatabase(){
+        return mDb;
+    }
+
+    public DaoSession getNewSession(){
+        return mDaoMaster.newSession();
+    }
 }

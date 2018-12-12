@@ -202,7 +202,7 @@ public class PageView extends View {
         canvas.drawColor(mBgColor);
 
         //绘制动画
-        if(mPageAnim!= null){
+        if (mPageAnim != null) {
             mPageAnim.draw(canvas);
         }
     }
@@ -220,10 +220,10 @@ public class PageView extends View {
                 mStartX = x;
                 mStartY = y;
                 isMove = false;
-                if (mTouchListener != null){
+                if (mTouchListener != null) {
                     canTouch = mTouchListener.onTouch();
                 }
-                if (mPageAnim != null){
+                if (mPageAnim != null) {
                     mPageAnim.onTouchEvent(event);
                 }
                 break;
@@ -289,7 +289,7 @@ public class PageView extends View {
     @Override
     public void computeScroll() {
         //进行滑动
-        if(mPageAnim!= null){
+        if (mPageAnim != null) {
             mPageAnim.scrollAnim();
         }
         super.computeScroll();

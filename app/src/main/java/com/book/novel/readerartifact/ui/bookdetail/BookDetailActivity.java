@@ -92,7 +92,7 @@ public class BookDetailActivity extends BaseActivity<IBookDetailModel, IBookDeta
     @OnClick(R.id.book_detail_tv_read)
     public void startReadBook() {
         Intent intent = new Intent(this, ReadingActivity.class);
-        intent.putExtra("EXTRA_COLL_BOOK", mCollBookBean);
+        intent.putExtra(EXTRA_COLL_BOOK, mCollBookBean);
         startActivity(intent);
     }
 
@@ -220,6 +220,5 @@ public class BookDetailActivity extends BaseActivity<IBookDetailModel, IBookDeta
         intent.putExtra(BOOK_ID, bookId);
         context.startActivity(intent);
     }
-
 
 }

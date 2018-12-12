@@ -4,13 +4,13 @@ package com.book.novel.readerartifact.widget.page.loader;
 
 import com.book.novel.readerartifact.ui.bookshelf.entity.BookChapterBean;
 import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
-import com.book.novel.readerartifact.util.BookRepository;
 import com.book.novel.readerartifact.util.CommonString;
 import com.book.novel.readerartifact.util.FileUtils;
 import com.book.novel.readerartifact.util.IOUtils;
 import com.book.novel.readerartifact.util.MD5Utils;
 import com.book.novel.readerartifact.util.RxUtils;
 import com.book.novel.readerartifact.util.StringUtils;
+import com.book.novel.readerartifact.util.db.BookRepository;
 import com.book.novel.readerartifact.widget.page.Charset;
 import com.book.novel.readerartifact.widget.page.PageView;
 import com.book.novel.readerartifact.widget.page.TxtChapter;
@@ -328,9 +328,8 @@ public class LocalPageLoader extends PageLoader {
             mCollBook.setLastRead(StringUtils.
                     dateConvert(System.currentTimeMillis(), CommonString.FORMAT_BOOK_DATE));
             //直接更新
-            //TODO
-//            BookRepository.getInstance()
-//                    .saveCollBook(mCollBook);
+            BookRepository.getInstance()
+                    .saveCollBook(mCollBook);
         }
     }
 
@@ -411,9 +410,8 @@ public class LocalPageLoader extends PageLoader {
                         mCollBook.setBookChapters(bookChapterBeanList);
                         mCollBook.setUpdated(lastModified);
 
-                        //TODO
-//                        BookRepository.getInstance().saveBookChaptersWithAsync(bookChapterBeanList);
-//                        BookRepository.getInstance().saveCollBook(mCollBook);
+                        BookRepository.getInstance().saveBookChaptersWithAsync(bookChapterBeanList);
+                        BookRepository.getInstance().saveCollBook(mCollBook);
 
                         // 加载并显示当前章节
                         openChapter();

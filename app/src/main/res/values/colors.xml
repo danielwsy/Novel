@@ -11,6 +11,9 @@
     <color name="orange">#DE6014</color>
     <color name="light_white">#EEEEEE</color>
     <color name="light_coffee">#A58D5E</color>
+    <color name="light_translucent">#23000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_red">#EC4A48</color>
 
     <color name="nb.theme.background">@color/white</color>
     <color name="nb.divider.common">#727272</color>

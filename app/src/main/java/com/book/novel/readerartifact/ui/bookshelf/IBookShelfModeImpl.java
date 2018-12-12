@@ -5,7 +5,7 @@ import com.book.novel.readerartifact.ui.bookshelf.entity.DownloadTaskBean;
 import com.book.novel.readerartifact.network.BaseHttpUtils;
 import com.book.novel.readerartifact.network.UrlConfig;
 import com.book.novel.readerartifact.util.BookApi;
-import com.book.novel.readerartifact.util.BookRepository;
+import com.book.novel.readerartifact.util.db.BookRepository;
 
 import java.util.List;
 

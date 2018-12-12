@@ -4,10 +4,10 @@ package com.book.novel.readerartifact.widget.page.loader;
 import com.book.novel.readerartifact.ui.bookshelf.entity.BookChapterBean;
 import com.book.novel.readerartifact.ui.bookshelf.entity.CollectBookBean;
 import com.book.novel.readerartifact.util.BookManager;
-import com.book.novel.readerartifact.util.BookRepository;
 import com.book.novel.readerartifact.util.CommonString;
 import com.book.novel.readerartifact.util.FileUtils;
 import com.book.novel.readerartifact.util.StringUtils;
+import com.book.novel.readerartifact.util.db.BookRepository;
 import com.book.novel.readerartifact.widget.page.PageView;
 import com.book.novel.readerartifact.widget.page.TxtChapter;
 
@@ -219,9 +219,8 @@ public class NetPageLoader extends PageLoader {
             mCollBook.setLastRead(StringUtils.
                     dateConvert(System.currentTimeMillis(), CommonString.FORMAT_BOOK_DATE));
             //直接更新
-            //TODO
-//            BookRepository.getInstance()
-//                    .saveCollBook(mCollBook);
+            BookRepository.getInstance()
+                    .saveCollBook(mCollBook);
         }
     }
 }

@@ -57,6 +57,20 @@ public class CollectBookBean implements Parcelable {
 
 
     protected CollectBookBean(Parcel in) {
+        this._id = in.readString();
+        this.title = in.readString();
+        this.author = in.readString();
+        this.shortIntro = in.readString();
+        this.cover = in.readString();
+        this.hasCp = in.readByte() != 0;
+        this.latelyFollower = in.readInt();
+        this.retentionRatio = in.readDouble();
+        this.updated = in.readString();
+        this.lastRead = in.readString();
+        this.chaptersCount = in.readInt();
+        this.lastChapter = in.readString();
+        this.isUpdate = in.readByte() != 0;
+        this.isLocal = in.readByte() != 0;
     }
 
     @Generated(hash = 230833102)
