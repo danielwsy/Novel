@@ -69,12 +69,14 @@ dependencies {
     //Search页面
     compile rootProject.ext.dependencies["taggroup"]
     compile rootProject.ext.dependencies["recyclerview"]
+    //分类查找书籍
+    compile rootProject.ext.dependencies["verticalviewpager"]
+    compile rootProject.ext.dependencies["VerticalTabLayout"]
 
     //数据库
     compile 'org.greenrobot:greendao:3.2.2'
 
     compile "com.zqc.opencc.android.lib:lib-opencc-android:0.8.0@aar"
-
 
 
 }

@@ -16,6 +16,7 @@ import com.book.novel.readerartifact.base.IPresenter;
 import com.book.novel.readerartifact.base.IView;
 import com.book.novel.readerartifact.base.SupportFragment;
 import com.book.novel.readerartifact.ui.bookshelf.BookShelfFragment;
+import com.book.novel.readerartifact.ui.findbook.FindBookFragment;
 import com.book.novel.readerartifact.ui.seach.SearchActivity;
 import com.book.novel.readerartifact.ui.setting.SettingActivity;
 

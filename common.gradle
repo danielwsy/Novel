@@ -44,8 +44,11 @@ ext {
             // 不知道干嘛的，
             "taggroup"            : "me.gujun.android.taggroup:library:1.4@aar",
 
-            "recyclerview"          : "com.android.support:recyclerview-v7:24.2.0",
+            "recyclerview"        : "com.android.support:recyclerview-v7:24.2.0",
 
+            //垂直的viewpager + 垂直的Tablayout
+            "verticalviewpager"   : "com.github.castorflex.verticalviewpager:library:19.0.1",
+            "VerticalTabLayout"   : "q.rorbin:VerticalTabLayout:1.2.5"
 
     ]
 }
