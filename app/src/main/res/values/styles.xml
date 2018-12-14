@@ -9,12 +9,14 @@
     </style>
 
     <style name="AppTheme.NoBar">
+        <item name="android:screenOrientation">portrait</item>
         <item name="windowNoTitle">true</item>
     </style>
 
     <style name="AppTheme.Splash">
         <item name="windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
+        <item name="android:screenOrientation">portrait</item>
     </style>
     <!--Common-->
 
