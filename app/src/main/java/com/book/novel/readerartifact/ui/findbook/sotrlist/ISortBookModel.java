@@ -1,6 +1,7 @@
 package com.book.novel.readerartifact.ui.findbook.sotrlist;
 
 import com.book.novel.readerartifact.base.IModel;
+import com.book.novel.readerartifact.ui.findbook.entity.BookSortListType;
 import com.book.novel.readerartifact.ui.findbook.entity.SortBookPackage;
 
 import io.reactivex.Observable;
@@ -13,6 +14,10 @@ import io.reactivex.Observable;
 
 public interface ISortBookModel extends IModel {
 
-    Observable<SortBookPackage> getSortBookPackage();
+    Observable<SortBookPackage> getSortBookPackage(String gender, BookSortListType type, String major, String minor, int start, int limit);
+
+
+    Observable<SortBookPackage> refrashSortBookPackage(String gender, BookSortListType type, String major, String minor, int start, int limit);
 
 }
+

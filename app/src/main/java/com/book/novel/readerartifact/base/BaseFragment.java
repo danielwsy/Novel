@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 /**
  * @author daniel-wang.
@@ -21,6 +23,7 @@ public abstract class BaseFragment<M extends IModel, V extends IView, P extends 
     protected View mRootView = null;
     Unbinder unbinder;
     protected P presenter;
+    protected CompositeDisposable mDisposable;
 
     @Override
     public void onAttach(Context context) {
@@ -30,6 +33,13 @@ public abstract class BaseFragment<M extends IModel, V extends IView, P extends 
             presenter.registerModel(createModel());
             presenter.registerView(createView());
         }
+    }
+
+    protected void addDisposable(Disposable d) {
+        if (mDisposable == null) {
+            mDisposable = new CompositeDisposable();
+        }
+        mDisposable.add(d);
     }
 
     @Nullable
@@ -84,5 +94,13 @@ public abstract class BaseFragment<M extends IModel, V extends IView, P extends 
             presenter.destroy();
         }
         unbinder.unbind();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        if (mDisposable != null) {
+            mDisposable.clear();
+        }
     }
 }
