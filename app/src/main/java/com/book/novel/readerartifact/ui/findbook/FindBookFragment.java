@@ -10,6 +10,7 @@ import com.book.novel.readerartifact.base.BaseFragment;
 import com.book.novel.readerartifact.base.IModel;
 import com.book.novel.readerartifact.base.IPresenter;
 import com.book.novel.readerartifact.base.IView;
+import com.book.novel.readerartifact.ui.findbook.adapter.FindBookAdapter;
 
 import butterknife.BindView;
 

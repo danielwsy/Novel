@@ -23,4 +23,6 @@
 
     <string name="nb.mode.night">夜间</string>
     <string name="nb.mode.morning">日间</string>
+
+    <string name="nb.sort.book_count">%1$d 本</string>
 </resources>

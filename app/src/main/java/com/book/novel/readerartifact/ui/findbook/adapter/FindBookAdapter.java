@@ -1,8 +1,11 @@
-package com.book.novel.readerartifact.ui.findbook;
+package com.book.novel.readerartifact.ui.findbook.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.book.novel.readerartifact.ui.findbook.SortBookFragment;
+import com.book.novel.readerartifact.ui.findbook.TopBookFragment;
 
 /**
  * @author daniel-wang.

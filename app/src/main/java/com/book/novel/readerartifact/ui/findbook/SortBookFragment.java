@@ -2,6 +2,7 @@ package com.book.novel.readerartifact.ui.findbook;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.book.novel.readerartifact.HiApplication;
@@ -10,6 +11,7 @@ import com.book.novel.readerartifact.base.BaseFragment;
 import com.book.novel.readerartifact.base.IModel;
 import com.book.novel.readerartifact.base.IPresenter;
 import com.book.novel.readerartifact.base.IView;
+import com.book.novel.readerartifact.ui.findbook.adapter.SortVpAdapter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -37,6 +39,9 @@ public class SortBookFragment extends BaseFragment {
     @BindView(R.id.sort_viewpager)
     VerticalViewPager mViewPager;
 
+    SortVpAdapter mAapter;
+
+    List<String> titles = null;
 
     public static SortBookFragment getInstance() {
         Bundle args = new Bundle();
@@ -69,8 +74,38 @@ public class SortBookFragment extends BaseFragment {
     @Override
     public void initView(View view, Bundle savedInstanceState) {
         super.initView(view, savedInstanceState);
-        mTablayout.addTab(new QTabView(HiApplication.getContext()) {
+        mTablayout.setTabAdapter(new MyTabAdapter());
+        mTablayout.addOnTabSelectedListener(new VerticalTabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabView tab, int position) {
+                mViewPager.setCurrentItem(position);
+            }
+
+            @Override
+            public void onTabReselected(TabView tab, int position) {
+
+            }
         });
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                mTablayout.setTabSelected(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        titles = new ArrayList<>();
+        titles.add("男生");
+        titles.add("女生");
+        mViewPager.setAdapter(new SortVpAdapter(getChildFragmentManager(), (ArrayList<String>) titles));
     }
 
     class MyTabAdapter implements TabAdapter {
@@ -78,18 +113,17 @@ public class SortBookFragment extends BaseFragment {
 
         {
             titles = new ArrayList<>();
-            Collections.addAll(titles, "Android", "IOS", "Web", "JAVA", "C++"
-            );
+            Collections.addAll(titles, "男频", "女频");
         }
 
         @Override
         public int getCount() {
-            return 5;
+            return titles.size();
         }
 
         @Override
         public ITabView.TabBadge getBadge(int position) {
-            return null;
+            return new QTabView(HiApplication.getContext()).getBadge();
         }
 
         @Override
@@ -99,7 +133,11 @@ public class SortBookFragment extends BaseFragment {
 
         @Override
         public ITabView.TabTitle getTitle(int position) {
-            return null;
+
+            return new QTabView.TabTitle.Builder()
+                    .setContent(titles.get(position))
+                    .setTextColor(Color.BLUE, Color.BLACK)
+                    .build();
         }
 
         @Override
