@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.findbook;
+package com.book.novel.readerartifact.ui.findbook.sort;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -27,7 +27,7 @@ import q.rorbin.verticaltablayout.widget.TabView;
 
 /**
  * @author daniel-wang.
- * @describe :  分类小说页面
+ * @describe :  分类小说页面(包含各种类型的小说) ----第2层
  * @date :2018/12/14
  */
 

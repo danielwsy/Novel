@@ -1,12 +1,17 @@
 package com.book.novel.readerartifact.ui.findbook;
 
+import com.book.novel.readerartifact.ui.findbook.entity.BillBookPackage;
+import com.book.novel.readerartifact.ui.findbook.entity.BillboardPackage;
 import com.book.novel.readerartifact.ui.findbook.entity.BookSortPackage;
 import com.book.novel.readerartifact.ui.findbook.entity.BookSubSortPackage;
 import com.book.novel.readerartifact.ui.findbook.entity.SortBookPackage;
 
+import java.util.List;
+
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -16,6 +21,25 @@ import retrofit2.http.Query;
  */
 
 public interface FindApi {
+
+    /**
+     * 获取所有排行榜
+     *
+     * @return
+     */
+    @GET("/ranking/gender")
+    Observable<BillboardPackage> getBillboardPackage();
+
+    /**
+     * 获取单一排行榜
+     * 周榜：rankingId-> _id
+     * 月榜：rankingId-> monthRank
+     * 总榜：rankingId-> totalRank
+     *
+     * @return
+     */
+    @GET("/ranking/{rankingId}")
+    Observable<BillBookPackage> getBillBookPackage(@Path("rankingId") String rankingId);
 
     /*******************************分类***************************************/
     /**

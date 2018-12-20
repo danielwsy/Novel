@@ -566,16 +566,14 @@ public abstract class PageLoader {
         }
 
         //存储到数据库
-        BookRepository.getInstance()
-                .saveBookRecord(mBookRecord);
+        BookRepository.getInstance().saveBookRecord(mBookRecord);
     }
 
     /**
      * 初始化书籍
      */
     private void prepareBook() {
-        mBookRecord = BookRepository.getInstance()
-                .getBookRecord(mCollBook.get_id());
+        mBookRecord = BookRepository.getInstance().getBookRecord(mCollBook.get_id());
 
         if (mBookRecord == null) {
             mBookRecord = new BookRecordBean();

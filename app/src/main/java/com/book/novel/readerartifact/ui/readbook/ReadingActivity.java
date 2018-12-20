@@ -17,6 +17,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -157,6 +158,12 @@ public class ReadingActivity extends BaseActivity<IReadModel, IReadView, ReadPre
     };
 
     @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
     public IReadModel createModel() {
         return new IReadModelImpl();
     }
@@ -238,7 +245,6 @@ public class ReadingActivity extends BaseActivity<IReadModel, IReadView, ReadPre
     }
 
     private void initClick() {
-
         mPageLoader.setOnPageChangeListener(
                 new PageLoader.OnPageChangeListener() {
 

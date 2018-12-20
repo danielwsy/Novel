@@ -5,6 +5,7 @@ import com.book.novel.readerartifact.ui.bookshelf.entity.DownloadTaskBean;
 import com.book.novel.readerartifact.network.BaseHttpUtils;
 import com.book.novel.readerartifact.network.UrlConfig;
 import com.book.novel.readerartifact.util.BookApi;
+import com.book.novel.readerartifact.util.RxBus;
 import com.book.novel.readerartifact.util.db.BookRepository;
 
 import java.util.List;
@@ -32,12 +33,12 @@ public class IBookShelfModeImpl implements IBookShelfModel {
         DownloadTaskBean task = new DownloadTaskBean();
 
 
-//        task.setTaskName(collectBookBean.getTitle());
-//        task.setBookId(collectBookBean.get_id());
-//        task.setBookChapters(collectBookBean.getBookChapters());
-//        task.setLastChapter(collectBookBean.getBookChapters().size());
-//
-//        RxBus.getInstance().post(task);
+        task.setTaskName(collectBookBean.getTitle());
+        task.setBookId(collectBookBean.get_id());
+        task.setBookChapters(collectBookBean.getBookChapters());
+        task.setLastChapter(collectBookBean.getBookChapters().size());
+
+        RxBus.getInstance().post(task);
 
     }
 

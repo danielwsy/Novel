@@ -45,7 +45,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoBar" />
         <activity
-            android:name=".ui.findbook.sotrlist.BookSortListActivity"
+            android:name=".ui.findbook.sort.sotrlist.BookSortListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoBar" />
 

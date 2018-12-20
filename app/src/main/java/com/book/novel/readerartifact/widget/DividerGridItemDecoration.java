@@ -13,8 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
-import com.book.novel.readerartifact.ui.findbook.SortBoyFragment;
-
 /**
  * Created by newbiechen on 2017/10/8.
  */

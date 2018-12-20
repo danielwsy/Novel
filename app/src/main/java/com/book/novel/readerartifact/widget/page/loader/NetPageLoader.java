@@ -51,9 +51,14 @@ public class NetPageLoader extends PageLoader {
         mChapterList = convertTxtChapter(mCollBook.getBookChapters());
         isChapterListPrepare = true;
 
-        // 目录加载完成，执行回调操作。
-        if (mPageChangeListener != null) {
-            mPageChangeListener.onCategoryFinish(mChapterList);
+        try {
+            //TODO 当前第一次打开时第一张无法加载先这样解决
+            // 目录加载完成，执行回调操作。
+            if (mPageChangeListener != null) {
+                mPageChangeListener.onCategoryFinish(mChapterList);
+            }
+        } catch (Throwable throwable) {
+
         }
 
         // 如果章节未打开
@@ -61,6 +66,8 @@ public class NetPageLoader extends PageLoader {
             // 打开章节
             openChapter();
         }
+
+
     }
 
     @Override

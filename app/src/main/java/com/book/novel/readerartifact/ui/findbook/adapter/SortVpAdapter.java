@@ -5,11 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.book.novel.readerartifact.base.BaseFragment;
-import com.book.novel.readerartifact.ui.findbook.SortBoyFragment;
-import com.book.novel.readerartifact.ui.findbook.SortGirlFragment;
+import com.book.novel.readerartifact.ui.findbook.sort.SortTypeFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author daniel-wang.
@@ -30,11 +28,11 @@ public class SortVpAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         BaseFragment fragment = null;
 //        if (position == 0) {
-//            fragment = SortBoyFragment.getInstance();
+//            fragment = SortTypeFragment.getInstance();
 //        } else {
 //            fragment = SortGirlFragment.getInstance();
 //        }
-        fragment = SortBoyFragment.getInstance(mTitles.get(position));
+        fragment = SortTypeFragment.getInstance(mTitles.get(position));
         return fragment;
     }
 

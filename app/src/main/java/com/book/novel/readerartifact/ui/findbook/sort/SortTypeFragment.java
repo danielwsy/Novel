@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.findbook;
+package com.book.novel.readerartifact.ui.findbook.sort;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -14,22 +14,18 @@ import com.book.novel.readerartifact.ui.findbook.adapter.SookBookAdpter;
 import com.book.novel.readerartifact.ui.findbook.entity.BookSortPackage;
 import com.book.novel.readerartifact.ui.findbook.entity.BookSubSortBean;
 import com.book.novel.readerartifact.ui.findbook.entity.BookSubSortPackage;
-import com.book.novel.readerartifact.ui.findbook.sort.ISortModel;
-import com.book.novel.readerartifact.ui.findbook.sort.ISortModelImpl;
-import com.book.novel.readerartifact.ui.findbook.sort.ISortView;
-import com.book.novel.readerartifact.ui.findbook.sort.SortPresenter;
-import com.book.novel.readerartifact.ui.findbook.sotrlist.BookSortListActivity;
+import com.book.novel.readerartifact.ui.findbook.sort.sotrlist.BookSortListActivity;
 import com.book.novel.readerartifact.widget.DividerGridItemDecoration;
 
 import butterknife.BindView;
 
 /**
  * @author daniel-wang.
- * @describe :
+ * @describe :  具体每个类型的页面-------第3层
  * @date :2018/12/17
  */
 
-public class SortBoyFragment extends BaseFragment<ISortModel, ISortView, SortPresenter> implements ISortView {
+public class SortTypeFragment extends BaseFragment<ISortModel, ISortView, SortPresenter> implements ISortView {
 
     @BindView(R.id.recycler_boy)
     RecyclerView mRecycler;
@@ -38,9 +34,9 @@ public class SortBoyFragment extends BaseFragment<ISortModel, ISortView, SortPre
     String tag = "";
     private BookSubSortPackage mSubSortPackage;
 
-    public static SortBoyFragment getInstance(String tag) {
+    public static SortTypeFragment getInstance(String tag) {
         Bundle args = new Bundle();
-        SortBoyFragment fragment = new SortBoyFragment();
+        SortTypeFragment fragment = new SortTypeFragment();
         args.putString("tag", tag);
         fragment.setArguments(args);
         return fragment;
@@ -85,7 +81,7 @@ public class SortBoyFragment extends BaseFragment<ISortModel, ISortView, SortPre
                     subSortBean = mSubSortPackage.getFemale().get(pos);
                     gender = "female";
                 }
-                BookSortListActivity.startActivity(getContext(), "female", subSortBean);
+                BookSortListActivity.startActivity(getContext(), gender, subSortBean);
             }
         });
     }

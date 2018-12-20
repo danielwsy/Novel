@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.findbook.sotrlist;
+package com.book.novel.readerartifact.ui.findbook.sort.sotrlist;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  * @author daniel-wang.
- * @describe : 分类书籍列表
+ * @describe : 分类书籍列表(通过具体类型等页面跳转过来)
  * @date :2018/12/17
  */
 

@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.findbook.sotrlist;
+package com.book.novel.readerartifact.ui.findbook.sort.sotrlist;
 
 import com.book.novel.readerartifact.network.BaseHttpUtils;
 import com.book.novel.readerartifact.ui.findbook.FindApi;

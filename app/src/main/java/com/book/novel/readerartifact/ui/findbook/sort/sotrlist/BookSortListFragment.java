@@ -1,4 +1,4 @@
-package com.book.novel.readerartifact.ui.findbook.sotrlist;
+package com.book.novel.readerartifact.ui.findbook.sort.sotrlist;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,9 +8,6 @@ import android.view.View;
 
 import com.book.novel.readerartifact.R;
 import com.book.novel.readerartifact.base.BaseFragment;
-import com.book.novel.readerartifact.base.IModel;
-import com.book.novel.readerartifact.base.IPresenter;
-import com.book.novel.readerartifact.base.IView;
 import com.book.novel.readerartifact.base.adapter.BaseListAdapter;
 import com.book.novel.readerartifact.ui.bookdetail.BookDetailActivity;
 import com.book.novel.readerartifact.ui.findbook.adapter.BookSortListAdapter;
@@ -29,7 +26,7 @@ import io.reactivex.disposables.Disposable;
 
 /**
  * @author daniel-wang.
- * @describe : 具体小说类型页面
+ * @describe : 具体类型（eg:热门）小说页面，点击跳转到小说详情页
  * @date :2018/12/17
  */
 

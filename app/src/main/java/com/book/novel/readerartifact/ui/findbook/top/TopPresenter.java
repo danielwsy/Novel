@@ -1,8 +1,8 @@
-package com.book.novel.readerartifact.ui.findbook.sotrlist;
+package com.book.novel.readerartifact.ui.findbook.top;
 
 import com.book.novel.readerartifact.base.BasePresenter;
-import com.book.novel.readerartifact.ui.findbook.entity.BookSortListType;
-import com.book.novel.readerartifact.ui.findbook.entity.SortBookPackage;
+import com.book.novel.readerartifact.ui.findbook.entity.BillBookPackage;
+import com.book.novel.readerartifact.ui.findbook.entity.BillboardPackage;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -12,33 +12,67 @@ import io.reactivex.schedulers.Schedulers;
 
 /**
  * @author daniel-wang.
- * @describe :
- * @date :2018/12/17
+ * @describe : 排行榜交互处理
+ * @date :2018/12/20
  */
 
-public class SortBookPresenter extends BasePresenter<ISortBookModel, ISoreBookView> {
+public class TopPresenter extends BasePresenter<ITopModel, ITopView> {
 
-    public void loadData(String gender, BookSortListType type, String major, String minor, int start, int limit) {
-        Observable<SortBookPackage> observable = mModel.getSortBookPackage(gender, type, major, minor, start, limit);
-        observable.observeOn(AndroidSchedulers.mainThread())
+    public void getAllTop() {
+        Observable<BillboardPackage> allTop = mModel.getAllTop();
+        allTop.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<SortBookPackage>() {
+                .subscribe(new Observer<BillboardPackage>() {
                     @Override
                     public void onSubscribe(Disposable d) {
 
                     }
 
                     @Override
-                    public void onNext(SortBookPackage sortBookPackage) {
+                    public void onNext(BillboardPackage billboardPackage) {
                         if (getView() != null) {
-                            getView().loadSucceed(sortBookPackage);
+                            getView().getAllTopSucceed(billboardPackage);
                         }
 
                     }
 
                     @Override
                     public void onError(Throwable e) {
+                        if (getView() != null) {
+                            getView().getError(e);
+                        }
+                    }
 
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+    }
+
+    public void getSingleTop(String id) {
+        Observable<BillBookPackage> singleTop = mModel.getSingleTop(id);
+        singleTop.observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe(new Observer<BillBookPackage>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(BillBookPackage billBookPackage) {
+                        if (getView() != null) {
+                            getView().getSingleTopSucceed(billBookPackage);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        if (getView() != null) {
+                            getView().getError(e);
+                        }
                     }
 
                     @Override
@@ -48,34 +82,6 @@ public class SortBookPresenter extends BasePresenter<ISortBookModel, ISoreBookVi
                 });
     }
 
-    public void refrashData(String gender, BookSortListType type, String major, String minor, int start, int limit) {
-        Observable<SortBookPackage> observable = mModel.getSortBookPackage(gender, type, major, minor, start, limit);
-        observable.observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<SortBookPackage>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(SortBookPackage sortBookPackage) {
-                        if (getView() != null) {
-                            getView().RefreshSucceed(sortBookPackage);
-                        }
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
 
     @Override
     protected void onViewDestroy() {
