@@ -43,6 +43,9 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.tv_setting)
     TextView mTvSetting;
 
+    @BindView(R.id.toolbar)
+    View view;
+
     @OnClick(R.id.iv_search)
     public void onSearchClicked() {
         startActivity(new Intent(this, SearchActivity.class));
@@ -90,10 +93,12 @@ public class MainActivity extends BaseActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.bookshelf:
+                        view.setVisibility(View.VISIBLE);
                         getSupportDelegate().showHideFragment(mFragments[0]);//show一个Fragment,hide其他同栈所有Fragment
                         break;
                     case R.id.find_book:
                         getSupportDelegate().showHideFragment(mFragments[1]);
+                        view.setVisibility(View.GONE);
                         break;
                 }
             }

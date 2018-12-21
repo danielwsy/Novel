@@ -49,6 +49,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoBar" />
 
+        <activity
+            android:name=".ui.findbook.sort.SortBookActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoBar" />
+
+        <activity
+            android:name=".ui.findbook.top.TopBookActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoBar" />
+
     </application>
 
 </manifest>

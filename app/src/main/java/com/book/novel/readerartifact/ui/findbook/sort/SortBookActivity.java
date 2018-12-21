@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.book.novel.readerartifact.HiApplication;
 import com.book.novel.readerartifact.R;
+import com.book.novel.readerartifact.base.BaseActivity;
 import com.book.novel.readerartifact.base.BaseFragment;
 import com.book.novel.readerartifact.base.IModel;
 import com.book.novel.readerartifact.base.IPresenter;
@@ -31,7 +32,7 @@ import q.rorbin.verticaltablayout.widget.TabView;
  * @date :2018/12/14
  */
 
-public class SortBookFragment extends BaseFragment {
+public class SortBookActivity extends BaseActivity {
 
     @BindView(R.id.sort_tab)
     VerticalTabLayout mTablayout;
@@ -39,17 +40,7 @@ public class SortBookFragment extends BaseFragment {
     @BindView(R.id.sort_viewpager)
     VerticalViewPager mViewPager;
 
-    SortVpAdapter mAapter;
-
     List<String> titles = null;
-
-    public static SortBookFragment getInstance() {
-        Bundle args = new Bundle();
-        SortBookFragment fragment = new SortBookFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
-
 
     @Override
     public IModel createModel() {
@@ -105,7 +96,7 @@ public class SortBookFragment extends BaseFragment {
         titles = new ArrayList<>();
         titles.add("男生");
         titles.add("女生");
-        mViewPager.setAdapter(new SortVpAdapter(getChildFragmentManager(), (ArrayList<String>) titles));
+        mViewPager.setAdapter(new SortVpAdapter(getSupportFragmentManager(), (ArrayList<String>) titles));
     }
 
     class MyTabAdapter implements TabAdapter {
